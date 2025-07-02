@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reservation | RESTAURANT</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="../CSS/style.css" />
+  <link rel="stylesheet" href="../CSS/reservation.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+</head>
+<body>
+<h1>The Hungry Table</h1>
+  <nav>
+    <div class="nav1">
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="reservation.html">Reservation</a>
+    </div>
+    <div class="nav2">
+      <div class="search">
+        <input type="text" placeholder="Search" />
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </div>
+      <div class="user">
+        <a href="login.html">
+          <i class="fa-solid fa-user"></i>
+          <span>User</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="reservation-container">
+    <div class="reservation">
+      <form id="reservation-form">
+        <h2>Your Reservation</h2>
+
+        <div>
+          <input type="text" id="name" placeholder="Your Name" required />
+          <input type="email" id="email" placeholder="Your Email" required />
+        </div>
+
+        <div>
+          <input type="text" id="phone" placeholder="Phone Number" required />
+          <input type="number" id="tableNumber" placeholder="Table Number" required />
+        </div>
+
+        <div>
+          <input type="date" id="date" required />
+          <input type="time" id="time" required />
+        </div>
+
+        <div>
+          <textarea id="request" placeholder="Your Request (Optional)" cols="30" rows="7"></textarea>
+        </div>
+
+        <div>
+          <button type="submit" class="btn">BOOK NOW</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="sec6">
+    <div>
+      <img src="../images/official logo text bl.png" alt="" />
+      <p>RESTAURANT</p>
+    </div>
+    <div>
+      <ul>
+        <li>Main Menu</li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Menu</a></li>
+        <li><a href="#">Events</a></li>
+        <li><a href="#">Offers</a></li>
+      </ul>
+    </div>
+    <div>
+      <ul>
+        <li>Information</li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Order & Returns</a></li>
+        <li><a href="#">Videos</a></li>
+        <li><a href="#">Reservation</a></li>
+      </ul>
+    </div>
+    <div>
+      <ul>
+        <li>Address</li>
+        <p>Guntur, Andhra Pradesh, India</p>
+        <p>9:00AM - 11:00PM</p>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>&copy; 2024 RESTAURANT | All Rights Reserved</p>
+  </div>
+
+  <!-- Reservation Form Script -->
+  <script>
+    document.getElementById("reservation-form").addEventListener("submit", async function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const phone = document.getElementById("phone").value;
+      const tableNumber = document.getElementById("tableNumber").value;
+      const date = document.getElementById("date").value;
+      const time = document.getElementById("time").value;
+      const request = document.getElementById("request").value;
+
+      try {
+        const response = await fetch("http://localhost:5000/api/reserve", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ name, email, phone, tableNumber, date, time, request })
+        });
+
+        const result = await response.json();
+        alert(result.message);
+      } catch (error) {
+        alert("Error submitting reservation. Please try again.");
+        console.error("Reservation error:", error);
+      }
+    });
+    const isLoggedIn = localStorage.getItem("userLoggedIn");
+
+if (!isLoggedIn || isLoggedIn !== "true") {
+  alert("Please login to access this page.");
+  window.location.href = "login.html";
+}
+  </script>
+
+</body>
+</html>

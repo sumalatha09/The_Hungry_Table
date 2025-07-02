@@ -1,0 +1,91 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+text-decoration: none;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.login-container{
+    min-height: 100vh;
+    padding: 0 7%;
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.login-image {
+    width: 300px; /* Small fixed width */
+    height: auto;
+}
+
+.login-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(239, 121, 30, 0.2);
+    object-fit: contain;
+}
+.login{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 0 150px rgba(239, 121, 30, 0.5);
+    border-radius: 20px;
+    padding: 40px;
+    width: 40%;
+}
+.form{
+    width: 100%;
+}
+.login h2{
+    margin-bottom: 20px;
+    font-size: 30px;
+    color: rgba(239, 121, 30);
+}
+.login-container label, .login-container input{
+    display: block;
+}
+.login label{
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+.login input{
+    padding: 10px;
+    width: 100%;
+    outline: none;
+    border: 1px solid rgba(128 128 128 0.1);
+    border-radius: 5px;
+    background-color: rgba(128 128 128 0.1);
+}
+.login .forgot{
+    text-align: right;
+    color: rgb(82, 82, 82);
+    font-size: 12px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+.login .btn{
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+    display: block;
+    text-align: center;
+}
+.login .btn:hover{
+    transform: translateX(0);
+}
+.login .signup{
+    color: rgb(82, 82, 82);
+    font-size: 13px;
+    text-align: center;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.login .signup span{
+    color: black;
+    font-weight: 30px;
+    cursor: pointer;
+}

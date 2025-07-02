@@ -1,0 +1,193 @@
+body {
+    background: linear-gradient(45deg, white 70%, rgb(254, 233, 209));
+}
+
+.menu {
+    text-align: center;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.menu h1 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 45px;
+}
+
+.menu .menu-box {
+    padding: 100px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 70%;
+}
+
+.menu-card {
+    min-width: 270px;
+    width: 270px;
+    padding: 40px 20px;
+    background-color: white;
+    padding-top: 0;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    overflow: visible;
+    margin-bottom: 100px;
+    box-shadow: 0 0 50px rgb(254, 233, 209);
+}
+
+.menu-card:hover img {
+    margin-top: 80px;
+}
+
+.menu-card img {
+    margin-bottom: 40px;
+    width: 180px;
+    height: 180px;
+    transition: all 0.3s;
+}
+
+.menu-card h4,
+.menu-card p,
+.menu-card span {
+    text-align: left;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.menu-card p {
+    font-size: 13px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.menu-card span {
+    color: rgb(241, 147, 73);
+    font-weight: 700;
+}
+
+/* NEW: Add to Cart Button */
+.add-to-cart {
+    background-color: #0a4275;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.add-to-cart:hover {
+    background-color: #06385f;
+}
+/* Cart Sidebar */
+#cart-sidebar {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    right: 0;
+    width: 350px;
+    height: 100vh;
+    background-color:rgb(254, 233, 209);
+    box-shadow: -5px 0 15px rgba(221, 205, 205, 0.2);
+    z-index: 999;
+    padding: 20px;
+    overflow-y: auto;
+}
+#cart-sidebar h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #0a4275;
+}
+
+.cart-items {
+    max-height: 60vh;
+    overflow-y: auto;
+    margin-bottom: 20px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.cart-item-name {
+    font-weight: bold;
+    flex: 1;
+}
+
+.cart-item-price {
+    color: #0a4275;
+    margin-left: 10px;
+}
+
+.remove-item {
+    color: red;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+/* Checkout Button */
+.checkout-btn {
+    background-color: #0a4275;
+    color: white;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: auto;
+}
+
+.checkout-btn:hover,
+#checkout-button:hover {
+    background-color: #06385f;
+}
+
+/* Floating Cart Button */
+.cart-toggle-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #0a4275;
+    color: white;
+    padding: 12px 16px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 1000;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 10px;
+}

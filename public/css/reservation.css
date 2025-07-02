@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .reservation-container {
+    display: flex;
+    min-height: 100vh;
+    background: url('../images/img10.jpg') no-repeat center center/cover;
+  }
+  
+  .reservation {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to bottom, white -100%, transparent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 70px;
+  }
+  
+  .reservation form {
+    padding: 50px;
+    width: 60%;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+  
+  .reservation form h2 {
+    margin-bottom: 20px;
+    font-size: 30px;
+    color: rgba(239, 122, 30);
+    text-align: center;
+  }
+  
+  .reservation form div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap; /* Responsive layout */
+  }
+  
+  .reservation form input {
+    width: 45%;
+    padding: 15px;
+    margin: 5px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .reservation form textarea {
+    resize: none;
+    width: 95%;
+    padding: 15px;
+    margin: 5px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .reservation form .btn {
+    display: block;
+    border-radius: 10px;
+    margin: 20px auto 0;
+    width: 250px;
+    padding: 15px;
+    background-color: rgba(239, 122, 30, 0.9);
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .reservation form .btn:hover {
+    transform: scale(1.05);
+    background-color: rgba(239, 122, 30, 1);
+  }
+  
+  /* Responsive Improvements */
+  @media (max-width: 768px) {
+    .reservation form {
+      width: 90%;
+      padding: 30px;
+    }
+  
+    .reservation form input {
+      width: 90%;
+    }
+  
+    .reservation form textarea {
+      width: 90%;
+    }
+  
+    .reservation form .btn {
+      width: 90%;
+    }
+  }
+  
